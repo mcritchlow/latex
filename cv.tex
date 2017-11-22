@@ -1,0 +1,155 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xifthen}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage{titlesec}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{titling}
+
+\author{Matthew Critchlow}
+
+\date{\today}
+\renewcommand{\maketitle}{
+\par{\centering{\Huge  \textsc{\theauthor}}\par}
+{\footnotesize\hfill{}\color{lightgray}(Last updated \thedate.)}}
+
+%Setting the font I want:
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\sfdefault}{ppl}
+
+\newcommand{\entry}[4]{
+\ifthenelse{\isempty{#3}}
+{\slimentry{#1}{#2}}{
+
+\begin{minipage}[t]{.15\textwidth}
+\hfill \textsc{#1}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t]{.80\textwidth}
+{\bf#2}---\textit{#3}. \footnotesize{#4}
+\end{minipage}\\
+\vspace{.25cm}
+}}
+
+\newcommand{\slimentry}[2]{
+
+\begin{minipage}[t]{.15\textwidth}
+\hfill \textsc{#1}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t]{.80\textwidth}
+#2
+\end{minipage}\\
+\vspace{.25cm}
+}
+
+%Instition macros, because laziness
+\newcommand{\uci}{University of California, Irvine}
+\newcommand{\ucsd}{University of California, San Diego}
+\newcommand{\usd}{University San Diego}
+
+%Section spacing and format:
+\titleformat{\section}{\Large\scshape\raggedright}{}{1em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{7pt}
+\titleformat{\subsection}{\large\sc\centering}{}{0em}{\underline}%[\rule{3cm}{.2pt}]
+\titlespacing{\subsection}{0pt}{7pt}{7pt}
+
+\setlength{\parindent}{0in}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+\maketitle
+
+\section{Basic Info}
+
+\vspace{.25cm}
+
+\begin{minipage}[t]{.5\linewidth}
+
+\begin{tabular}{rp{.75\linewidth}}
+    \textsc{Email:}     & \href{mailto:matt.critchlow@gmail.com}{matt.critchlow@gmail.com}\\
+    \textsc{www:}&\href{https://mcritchlow.github.io}{mcritchlow.github.io}
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+\begin{tabular}{rl}
+\textsc{Github:} & \href{http://github.com/mcritchlow}{mcritchlow}\\
+\textsc{PGP:}&\href{http://pgp.mit.edu/pks/lookup?op=get&search=0xE53B4D1FE0B14937}{E53B4D1FE0B14937}
+\end{tabular}
+\end{minipage}
+
+\vspace{.25cm}
+
+\section{Experience}
+
+\entry{2017}{Lead Application Developer}{\ucsd}{todo}
+\entry{2013--2017}{Manager of Development and Web Services}{\ucsd}{todo}
+\entry{2009--2013}{Web Technical Manager}{\ucsd}{todo}
+\entry{2006--2009}{Programmer/Analyst}{\ucsd}{todo}
+\entry{2004--2006}{Programmer/Analyst}{\uci}{todo}
+
+\section{Institutions}
+
+\entry{2011--2013}{Professional Certificate in Project Management}{\ucsd}{}
+\entry{1999--2004}{B.S. in Computer Science}{\uci}{}
+
+\section{Workshops and Presentations}
+
+\entry{2014}{``Programmer and Archivist Collaboration''
+(\href{https://www.slideshare.net/mattcritchlow/sca2014-ucsdfinal}{slides link})}{Society of California
+Archivists}{Forum-format presentation detailing how I worked closely with the Digital Library Project Manager, Cristela
+Garcia-Spitz, to come up with innovative ways of tracking progress of Digital Library project as well as development
+Sprints}
+
+\entry{2014}{``The Evolution of the UC San Diego Library DAMS''
+(\href{https://www.slideshare.net/mattcritchlow/the-evolution-of-the-uc-san-diego-library-dams}{slides link})}{Digital
+Initiatives Symposium, {\usd}}{Paper
+presenting an over of the {\ucsd} DAMS, the history behind it, and the use cases that drove the creation of a new system
+to support them}
+
+\entry{2014}{``Software Development Process''
+(\href{http://www.slideshare.net/mattcritchlow/software-development-process-36844544}{slides link})}{Campus LISA
+Conference, {\ucsd}}{Paper
+presenting the test driven development process and related tooling I helped implement}
+
+\entry{2014}{``Source Code Management''
+(\href{https://www.slideshare.net/mattcritchlow/uc-san-diego-campus-lisa-2014-source-code}{slides link})}{Campus LISA
+Conference, {\ucsd}}{Paper presenting the migration to using git, GitHub, and the git flow pattern for local development and release
+management that I helped implement.}
+
+\entry{2013}{``ALL TEH METADATAS Re-revisited''
+(\href{http://www.slideshare.net/mattcritchlow/c4-l-alltehmetadatas2013final}{slides
+link})}{Code4Lib Conference}{Paper
+presenting a comprehensive ontology modeling project I was a primary contributor to at {\ucsd}}
+
+
+\entry{2013}{``Metadata and Repository Services for Research Data Collections''
+(\href{http://www.slideshare.net/mattcritchlow/ucsd-library-hot-topics-webinars-part-2-final}{slides
+link})}{Duraspace Hot Topics Webinar Series}{Part of a three part webinar series in which I spoke about our Digital
+Asset Management System and related metadata modeling to support Research Data Collections at {\ucsd}}
+
+\section{Publications}
+
+\entry{2010}{``Using an Agile-based Approach to Develop A Library Mobile Website''
+}{Matt Critchlow, Lia Friedman, Daniel Suchy}{Code4Lib Journal(\href{http://journal.code4lib.org/articles/4642}{paper link})}
+
+\entry{2003}{``An Environment for Managing Evolving Product Line Architectures''
+}{Ping Chen, Matt Critchlow, Akash Garg, Chris Van der Westhuizen, and André van der Hoek}{In Proceedings of the International Conference on Software Maintenance, Amsterdam, Netherlands, September 2003}
+
+\entry{2003}{``Differencing and Merging within an Evolving Product Line Architecture''
+}{Ping Chen, Matt Critchlow, Akash Garg, Chris Van der Westhuizen, and André van der Hoek}{In Proceedings of the Fifth International Workshop on Product Family Engineering, Siena, Italy, November 2003}
+
+\section{Technical}
+\entry{Languages}{Ruby, Java, PHP, JavaScript, CSS, HTML.}{}{}
+\entry{Markup}{Markdown, YAML, HAML, {\LaTeX}}{}{}
+
+\section{Hobbies}
+\entry{Open Source}{\href{https://solus-project.com/}{Solus (Linux Distibution)},
+{\href{https://github.com/samvera}{Samvera}}}{}{}
+\entry{Other}{Playing Guitar, Surfing}{}{}
+
+\end{document}
